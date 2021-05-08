@@ -1,0 +1,11 @@
+spring:
+  port: 8080
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: orderService
+        uri: lb://ORDER-SERVICE
+        predicates:
+        - Path=/order/**
